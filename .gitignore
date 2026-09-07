@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+
+# 模型权重（体积大，用 Git LFS 或网盘分发）
+*.pth
+*.pt
+*.onnx
+
+# 训练数据 / 检查点 / SGF 临时目录
+checkpoints/
+checkpoints_value/
+processed_data/
+processed_data_value/
+self_play_data/
+downloads/
+sgf_data/
+
+# 操作系统
+.DS_Store
+Thumbs.db

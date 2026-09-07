@@ -1,0 +1,57 @@
+# AlphaGo-From-Scratch 配置
+# 说明：代码内置默认值与下列参数保持一致；src/utils.py 提供 load_config() 读取入口。
+# 如需让训练脚本读取本文件，可在对应 train() 入口用 load_config() 覆盖常量。
+
+# ---------- 棋盘 ----------
+board:
+  size: 19            # 棋盘路数
+  komi: 7.5           # 白方贴目（中国规则数子）
+  max_moves: 500      # 单局最大手数上限
+
+# ---------- 策略网络（src/policy_network.py） ----------
+policy_network:
+  input_channels: 2   # 通道 0=当前方棋子，通道 1=对方棋子
+  num_actions: 362    # 361 个棋盘交点 + 1 个 Pass
+  batch_size: 256
+  learning_rate: 1e-3 # AdamW
+  weight_decay: 1e-4
+  num_epochs: 30
+  val_ratio: 0.05
+
+# ---------- 价值网络（src/value_network.py） ----------
+value_network:
+  input_channels: 2
+  batch_size: 256
+  learning_rate: 1e-3 # AdamW
+  weight_decay: 1e-4
+  num_epochs: 30
+  val_ratio: 0.05
+
+# ---------- MCTS（src/mcts.py） ----------
+mcts:
+  num_simulations: 100   # CPU 建议 100，GPU 可 400+
+  c_puct: 1.0            # 探索常数
+  temperature: 0.0       # 对弈时贪心取访问次数最多的动作
+
+# ---------- 自我对弈（src/self_play.py） ----------
+self_play:
+  num_games: 10
+  num_simulations: 200
+  temp_moves: 30         # 前 30 手 temperature=1.0，之后 0.1
+  output_dir: ./self_play_data
+  batch_save_size: 10000
+
+# ---------- 数据管线（scripts/process_sgf_*.py） ----------
+data:
+  downloads_dir: ./downloads        # 原始 SGF 压缩包目录
+  sgf_extract_dir: ./sgf_data       # 解压临时目录
+  policy_output_dir: ./processed_data        # 策略网络训练数据（v2 输出）
+  value_output_dir: ./processed_data_value   # 价值网络训练数据（v3 输出）
+  batch_save_size: 10000
+  min_moves: 10
+  max_moves: 400
+
+# ---------- 检查点 / 模型 ----------
+checkpoints:
+  policy: ./checkpoints/best_model.pth         # 策略网络权重
+  value: ./checkpoints_value/best_model.pth    # 价值网络权重

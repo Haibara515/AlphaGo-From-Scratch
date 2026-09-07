@@ -1,0 +1,21 @@
+# AlphaGo-From-Scratch 运行依赖
+
+# --- 深度学习核心 ---
+torch>=2.0
+numpy>=1.24
+
+# --- 图形界面（人机/AI 对弈，src/play.py） ---
+pygame>=2.5
+
+# --- 训练进度条 ---
+tqdm>=4.65
+
+# --- SGF 棋谱解析（数据管线 scripts/process_sgf_*.py） ---
+sgfmill>=1.1
+
+# --- 配置读取（src/utils.py，可选） ---
+pyyaml>=6.0
+
+# --- 开发与测试 ---
+pytest>=7.0
+setuptools>=68.0
