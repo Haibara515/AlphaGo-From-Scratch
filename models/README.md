@@ -11,7 +11,7 @@
 
 ## 分发方式
 
-- 推荐使用 **Git LFS** 管理权重：`git lfs track "*.pth"`
+- 使用 **Git LFS** 管理权重：`git lfs track "*.pth"`
 - 或者上传到网盘（百度网盘 / Google Drive），在 Release 页面提供下载链接
 - 参考 `scripts/download_weights.sh` 中的示例命令
 

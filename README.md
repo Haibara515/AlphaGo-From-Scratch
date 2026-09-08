@@ -118,8 +118,7 @@ python -m pytest tests/ -v
 
 ## 模型权重
 
-训练好的 `.pth` 体积较大（策略网络约 29 MB），未随仓库提交，请用 **Git LFS** 或网盘
-分发，参考 [models/README.md](models/README.md) 与
+训练好的 `.pth` 体积较大（策略网络约 29 MB），可用提供的脚本自行训练，后续可能会传入模型权重参考 [models/README.md](models/README.md) 与
 [scripts/download_weights.sh](scripts/download_weights.sh)。
 
 ## 训练日志
