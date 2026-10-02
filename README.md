@@ -5,7 +5,7 @@
 
 ## 项目背景
 
-我是一名**机械工程背景（机器视觉方向）**的开发者。这个项目的初衷是：用一套真正
+我是一名机械工程背景（机器视觉方向）的开发者。这个项目的初衷是：用一套真正
 「从论文到可运行程序」的完整 AI 系统，证明自己不仅会调包，更理解深度强化学习的
 **建模、训练、搜索与工程化**全链路。
 
@@ -90,7 +90,7 @@ AlphaGo-From-Scratch/
 
 ```bash
 # 1) 克隆并安装依赖
-git clone <your-repo-url>
+git clone https://github.com/Haibara515/AlphaGo-From-Scratch.git
 cd AlphaGo-From-Scratch
 pip install -r requirements.txt
 
